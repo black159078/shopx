@@ -1,54 +1,3 @@
-// import axios from "axios";
-// import React, { useState,useEffect } from "react";
-// import { useNavigate } from "react-router";
-
-// const Newarrival = ()=>{
-
-//     const [items,setItems] = useState([]);
-
-//     const navigate = useNavigate();
-
-//     useEffect(()=>{
-//         axios.get("http://localhost:5000/api/newarrivals")
-//         .then(res=>{
-//             setItems(res.data);
-//         }).catch(err=>{
-//             console.log(err);
-//         })
-//     },[])
-
-//     return(
-//         <>
-//             <section className="container-fluid mt-5">
-//                 <div className="row">
-//                     <div className="col-lg-10 col-md-9 ms-auto">
-//                         <h3 className="display-6 text-center">New Arrivals</h3>
-//                         <div className="row g-2">
-//                             {
-//                                 items.map(item=>(
-//                                     <div className="col-lg-2 col-md-4 col-sm-6" key={item.id}>
-//                                         <div className="card h-100 shadow-md" style={{cursor:"pointer"}} onClick={()=>navigate(`/allproducts/${item.id}`)}>
-//                                             <img src={item.image} className="card-img-top p-2" alt={item.title} style={{maxHeight:"150px",objectFit:"contain"}} />
-//                                             <div className="card-footer bg-dark text-light">
-//                                                 <p className="card-title text-center">{item.title}</p>
-//                                             </div>
-//                                         </div>
-//                                     </div>
-//                                 ))
-//                             }
-                            
-//                         </div>
-                        
-//                     </div>
-//                 </div>
-//             </section>
-//         </>
-//     )
-// }
-
-// export default Newarrival;
-
-
 import axios from "axios";
 import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router";
@@ -56,6 +5,8 @@ import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faCartPlus, faTag } from "@fortawesome/free-solid-svg-icons";
 import { notifyCartUpdated } from "../lib/cartUtils";
+
+import { API_BASE_URL } from "../config";
 
 const formatMMK = (n) => `${Number(n || 0).toLocaleString("en-US")} MMK`;
 
@@ -66,7 +17,7 @@ const Newarrival = ()=>{
     const navigate = useNavigate();
 
     useEffect(()=>{
-        axios.get("http://localhost:5000/api/newarrivals")
+        axios.get(`${API_BASE_URL}/api/newarrivals`)
         .then(res=>{
             setItems(res.data);
         }).catch(err=>{

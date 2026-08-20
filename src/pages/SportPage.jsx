@@ -6,7 +6,7 @@ import LeftsideBar from "../components/LeftsideBar";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faTag, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-
+import { API_BASE_URL } from "../config";
 const SportPage = ()=>{
     const [datas,setDatas] = useState([]);
 
@@ -14,7 +14,7 @@ const SportPage = ()=>{
 
     useEffect(()=>{
         axios
-        .get("http://localhost:5000/api/category/sport")
+        .get(`${API_BASE_URL}/api/category/sport`)
         .then(res=>{
             console.log(res.data);
             setDatas(res.data);

@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import axios from "axios";
 import { useParams,Link,useNavigate } from "react-router";
 import TopnavBar from "../components/TopnavBar";
+import { API_BASE_URL } from "../config";
 
 import { ToastContainer, toast } from 'react-toastify';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,7 +20,7 @@ const ProductDetailPage = ()=>{
     const [relatedProducts,setRelatedProducts] = useState([]);
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/api/allproducts/${id}`)
+        axios.get(`${API_BASE_URL}/api/allproducts/${id}`)
         .then(res=>{
             setItem(res.data);
             console.log(res.data);
@@ -34,7 +35,7 @@ const ProductDetailPage = ()=>{
         if (!item) return;
     
         axios
-            .get("http://localhost:5000/api/products")
+            .get(`${API_BASE_URL}/api/products`)
             .then(res => {
     
                 const sameCategory = res.data.filter(product => {
@@ -275,10 +276,3 @@ const ProductDetailPage = ()=>{
 }
 
 export default ProductDetailPage;
-
-const alldatas = [
-    // Part 1
-    // Part 2
-    // Part 3
-    // Part 4
-];

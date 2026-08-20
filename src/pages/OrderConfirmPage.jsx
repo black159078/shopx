@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation, useNavigate, Link } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck, faTruckFast, faMoneyBillWave } from "@fortawesome/free-solid-svg-icons";
-
+import { API_BASE_URL } from "../config";
 import TopnavBar from "../components/TopnavBar";
 
 const formatMMK = (n) => `${Number(n || 0).toLocaleString("en-US")} MMK`;

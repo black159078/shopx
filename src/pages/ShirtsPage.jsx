@@ -6,7 +6,7 @@ import LeftsideBar from "../components/LeftsideBar";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faStar, faTag } from "@fortawesome/free-solid-svg-icons";
-
+import { API_BASE_URL } from "../config";
 
 const ShirtsPage = ()=>{
 
@@ -16,7 +16,7 @@ const ShirtsPage = ()=>{
 
     useEffect(()=>{
         axios
-        .get("http://localhost:5000/api/category/menfashion/shirts")
+        .get(`${API_BASE_URL}/api/category/menfashion/shirts`)
         .then(res=>{
             console.log(res.data);
             setDatas(res.data);

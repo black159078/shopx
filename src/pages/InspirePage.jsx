@@ -7,6 +7,8 @@ import LeftsideBar from "../components/LeftsideBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faTag, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
+import { API_BASE_URL } from "../config";
+
 const InspirePage = ()=>{
     const [datas,setDatas] = useState([]);
 
@@ -14,7 +16,7 @@ const InspirePage = ()=>{
 
     useEffect(()=>{
         axios
-        .get("http://localhost:5000/api/category/perfume/inspire")
+        .get(`${API_BASE_URL}/api/category/perfume/inspire`)
         .then(res=>{
             console.log(res.data);
             setDatas(res.data);

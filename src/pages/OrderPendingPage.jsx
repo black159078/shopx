@@ -6,8 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 import TopnavBar from "../components/TopnavBar";
+import { API_BASE_URL } from "../config";
 
-const SOCKET_URL = "http://localhost:5000";
+const SOCKET_URL = API_BASE_URL;
 
 const OrderPendingPage = () => {
     const location = useLocation();

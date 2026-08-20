@@ -17,7 +17,9 @@ import {
 
 import "./../assets/css/orderdashboard.css";
 
-const SOCKET_URL = "http://localhost:5000";
+import { API_BASE_URL } from "../config";
+
+const SOCKET_URL = API_BASE_URL;
 
 const formatMMK = (n) => `${Number(n || 0).toLocaleString("en-US")} MMK`;
 

@@ -6,6 +6,7 @@ import TopnavBar from "../components/TopnavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft,faTruck,faCreditCard,faTrash,faMoneyBill } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { API_BASE_URL } from "../config";
 
 const DELIVERY_FEE = 5000;
 const DEPOSIT_RATE = 0.10;
@@ -101,7 +102,7 @@ const CheckoutPage = ()=>{
         setSubmitting(true);
 
         try{
-            const res = await axios.post("http://localhost:5000/api/orders/upload",formData,{
+            const res = await axios.post(`${API_BASE_URL}/api/orders/upload`,formData,{
                 headers:{"Content-Type":"multipart/form-data"}
             })
 

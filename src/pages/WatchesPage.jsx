@@ -6,7 +6,7 @@ import LeftsideBar from "../components/LeftsideBar";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faTag, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-
+import { API_BASE_URL } from "../config";
 const WatchesPage = ()=>{
     const [datas,setDatas] = useState([]);
 
@@ -14,7 +14,7 @@ const WatchesPage = ()=>{
 
     useEffect(()=>{
         axios
-        .get("http://localhost:5000/api/category/watches")
+        .get(`${API_BASE_URL}api/category/watches`)
         .then(res=>{
             console.log(res.data);
             setDatas(res.data);

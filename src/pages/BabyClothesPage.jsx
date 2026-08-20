@@ -7,6 +7,8 @@ import LeftsideBar from "../components/LeftsideBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faTag, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
+import { API_BASE_URL } from "../config";
+
 const BabyClothesPage = ()=>{
     const [datas,setDatas] = useState([]);
 
@@ -14,7 +16,7 @@ const BabyClothesPage = ()=>{
 
     useEffect(()=>{
         axios
-        .get("http://localhost:5000/api/category/babyandkid/babyclothes")
+        .get(`${API_BASE_URL}/api/category/babyandkid/babyclothes`)
         .then(res=>{
             console.log(res.data);
             setDatas(res.data);
