@@ -5,7 +5,7 @@ import TopnavBar from "../components/TopnavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTag, faTrash, faArrowLeft, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-// import { API_BASE_URL } from "../config";
+
 
 const formatMMK = (n) => `${Number(n || 0).toLocaleString("en-US")} MMK`;
 
