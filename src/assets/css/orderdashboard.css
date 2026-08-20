@@ -1,0 +1,19 @@
+/* Minimal overrides — everything else comes from Bootstrap, black/white/gray only */
+
+@keyframes flash-row {
+  0% { background-color: rgba(0, 0, 0, 0.08); }
+  100% { background-color: transparent; }
+}
+
+.order-row-new {
+  animation: flash-row 1.8s ease-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.live-dot {
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}

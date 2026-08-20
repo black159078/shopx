@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    user-select: none;
+}
+
+/* left side bar */
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav
+{
+    width:100% !important;
+}
+
+.active-link{
+    background:#0d6efd;
+    color:white !important;
+    border-radius:5px;
+}
+
+.hovereffect{
+    width: 100%;
+    display: block;
+    opacity: 0.9;
+}
+
+.hovereffect:hover{
+    color: #fff;
+    opacity: 1;
+    background-color: #397fe8;
+}
+
